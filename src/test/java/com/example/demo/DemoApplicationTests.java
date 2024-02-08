@@ -18,5 +18,16 @@ public class DemoApplicationTests {
         List<User> users= userMapper.selectList(null);
         System.out.println(users);
     }
+    //添加add
+    @Test
+    public void addUser(){
+        User user = new User();
+        user.setName("Lucy");
+        user.setAge(30);
+        user.setEmail("lucy@gmail.com");
+
+        int insert = userMapper.insert(user);
+        System.out.println("insert" + insert);
+    }
 
 }
