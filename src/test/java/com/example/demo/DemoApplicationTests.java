@@ -16,7 +16,7 @@ public class DemoApplicationTests {
     @Test
     public void contextLoads() {
         List<User> users= userMapper.selectList(null);
-        System.out.println(users);
+        //System.out.println(users);
     }
 
 }
