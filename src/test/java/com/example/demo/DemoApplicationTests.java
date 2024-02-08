@@ -2,6 +2,7 @@ package com.example.demo;
 
 import com.example.demo.entity.User;
 import com.example.demo.mapper.UserMapper;
+import lombok.val;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -28,6 +29,16 @@ public class DemoApplicationTests {
 
         int insert = userMapper.insert(user);
         System.out.println("insert" + insert);
+    }
+    @Test
+    public void updatedUser(){
+        User user = new User();
+
+        user.setId(2L);
+        user.setAge(120);
+
+        int row = userMapper.updateById(user);
+        System.out.println(row);
     }
 
 }
