@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.Date;
 import java.util.List;
 
 @SpringBootTest
@@ -15,7 +16,7 @@ public class DemoApplicationTests {
     private UserMapper userMapper;
     //Get all user data
     @Test
-    public void contextLoads() {
+    public void getAll() {
         List<User> users= userMapper.selectList(null);
         System.out.println(users);
     }
@@ -23,9 +24,9 @@ public class DemoApplicationTests {
     @Test
     public void addUser(){
         User user = new User();
-        user.setName("Lucy");
-        user.setAge(30);
-        user.setEmail("lucy@gmail.com");
+        user.setName("Amy");
+        user.setAge(35);
+        user.setEmail("Amy@gmail.com");
 
         int insert = userMapper.insert(user);
         System.out.println("insert" + insert);
