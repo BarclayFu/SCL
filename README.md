@@ -41,7 +41,7 @@ Asynchronous Computer Science Education System(ACSES)</h3>
   <p align="center">
     In 2022, alongside our partners at CMU's Entertainment Technology Center, STEM Coding Lab (SCL) began to develop 3–5-minute animated videos, covering concepts central to computer science learning, to be deployed into classrooms beyond the reach of our in-person instructors. In 2023, with support from the RK Mellon Foundation, SCL is building on this effort by partnering with the Allegheny Intermediate Unit (AIU) and CMU to create the supplementary teaching resources (lesson plans, activity guides, tips/tricks, etc.) necessary to create a comprehensive suite of engaging resources for teachers – as well as 6 more animated videos! We will pair this suite of assets with professional development trainings, co-hosted by SCL and AIU. The program will be named the Asynchronous Computer Science Education System (ACSES). 
     <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
+    <a href="https://drive.google.com/drive/folders/1BAFZ7lkx0WTJkh_h7zX5Cp0UcQGpkZYN?usp=drive_link"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/BarclayFu/SCL">View Demo</a>
