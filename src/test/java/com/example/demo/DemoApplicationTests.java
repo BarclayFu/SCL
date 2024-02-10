@@ -9,6 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.Arrays;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 @SpringBootTest
@@ -67,6 +68,17 @@ public class DemoApplicationTests {
     public void selectMultiIds(){
         List<User> users = userMapper.selectBatchIds(Arrays.asList(1L, 2L, 3L));
         System.out.println(users);
+    }
+
+    //Test simple conditional query
+    @Test
+    public void selectByMap(){
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("name", "Alice");
+        map.put("age", 28);
+        List<User> users = userMapper.selectByMap(map);
+
+        users.forEach(System.out::println);
     }
 
 
