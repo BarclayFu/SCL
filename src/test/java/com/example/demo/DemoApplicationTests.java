@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.demo.entity.User;
 import com.example.demo.mapper.UserMapper;
 import org.junit.jupiter.api.Test;
@@ -50,6 +51,13 @@ public class DemoApplicationTests {
         System.out.println("Deleted " + rows + " user(s)");
     }
 
+    //Test Delete Multi users By ID
+    @Test
+    public void DeleteMultiIds(){
+        int result = userMapper.deleteBatchIds(Arrays.asList(1, 2));
+        System.out.println(result);
+    }
+
     //Test Optimistic locking
     @Test
     public void testOptimisticLocker(){
@@ -79,6 +87,23 @@ public class DemoApplicationTests {
         users.forEach(System.out::println);
     }
 
+    //Test select page
+    @Test
+    public void selectPage(){
+        //every page have 3 results
+        Page<User> page = new Page<>(1,3);
+
+        userMapper.selectPage(page, null);
+
+        System.out.println(page.getCurrent());//Current page
+        System.out.println(page.getRecords());//List
+        System.out.println(page.getSize());//Results number every page
+        System.out.println(page.getTotal());//Total results numbers
+        System.out.println(page.getPages());//Total page numbers
+
+        System.out.println(page.hasNext());//Next page
+        System.out.println(page.hasPrevious());//Previous page
+    }
 
 
 }
