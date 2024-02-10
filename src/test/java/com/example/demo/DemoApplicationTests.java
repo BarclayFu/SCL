@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -49,6 +50,25 @@ public class DemoApplicationTests {
         int rows = userMapper.deleteById(userId);
         System.out.println("Deleted " + rows + " user(s)");
     }
+
+    //Test Optimistic locking
+    @Test
+    public void testOptimisticLocker(){
+        //get the user
+        User user = userMapper.selectById(1756132697928904705L);
+
+        //update the data
+        user.setAge(200);
+        userMapper.updateById(user);
+    }
+
+    //Test get multiple users by ID
+    @Test
+    public void selectMultiIds(){
+        List<User> users = userMapper.selectBatchIds(Arrays.asList(1L, 2L, 3L));
+        System.out.println(users);
+    }
+
 
 
 }
