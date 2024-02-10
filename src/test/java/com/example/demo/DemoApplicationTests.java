@@ -42,4 +42,13 @@ public class DemoApplicationTests {
         System.out.println(row);
     }
 
+    @Test
+    public void deleteUser() {
+        Long userId = 1L; // userID to be deleted
+
+        int rows = userMapper.deleteById(userId);
+        System.out.println("Deleted " + rows + " user(s)");
+    }
+
+
 }
