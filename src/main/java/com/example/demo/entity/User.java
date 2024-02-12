@@ -1,9 +1,6 @@
 package com.example.demo.entity;
 
-import com.baomidou.mybatisplus.annotation.FieldFill;
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.Version;
+import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;
 
 import java.util.Date;
@@ -26,6 +23,9 @@ public class User {
     //version_number
     @Version
     @TableField(fill = FieldFill.INSERT)
-    private Integer version;
+    private Integer version; //version number
+
+    @TableLogic
+    private Integer deleted;
 
 }

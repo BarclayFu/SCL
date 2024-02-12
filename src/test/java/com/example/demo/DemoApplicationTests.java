@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.demo.entity.User;
 import com.example.demo.mapper.UserMapper;
@@ -25,9 +26,9 @@ public class DemoApplicationTests {
     @Test
     public void addUser(){
         User user = new User();
-        user.setName("Amy");
+        user.setName("Jimmy");
         user.setAge(35);
-        user.setEmail("Amy@gmail.com");
+        user.setEmail("Jimmy@gmail.com");
 
         int insert = userMapper.insert(user);
         System.out.println("insert" + insert);
@@ -103,6 +104,19 @@ public class DemoApplicationTests {
 
         System.out.println(page.hasNext());//Next page
         System.out.println(page.hasPrevious());//Previous page
+    }
+
+    @Test
+    public void selectQuery(){
+        QueryWrapper<User> wrapper = new QueryWrapper<>();
+        //ge gt lt le || eq ne || orderBy groupBy between like
+//        wrapper.ge("age", 30);
+//        wrapper.eq("name", "Alice");
+//        wrapper.between("age", 20,30);
+        wrapper.like("name", "j");
+        wrapper.orderByDesc("age");
+        List<User> users = userMapper.selectList(wrapper);
+        System.out.println(users);
     }
 
 
